@@ -39,10 +39,11 @@ function calculate() {
   }
 
   // Validasi harga barang
-  if (hargaBarang == 0) {
-    alert('Harga barang tidak boleh nol!'); // Menampilkan pesan kesalahan
-    return; // Menghentikan perhitungan
+  if (hargaBarang === 0 || isNaN(hargaBarang)) {
+  document.getElementById('result').innerHTML = "Harga barang harus diisi dengan angka yang lebih dari nol.";
+  return; // Menghentikan perhitungan
   }
+
 
   var angsuranPokok = hargaBarang - uangMuka;
   var pokokBulanan = angsuranPokok / tenor;
